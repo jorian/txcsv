@@ -8,3 +8,5 @@ edition = "2018"
 
 [dependencies]
 komodo_rpc_client = { path = "/home/n41r0j/IdeaProjects/komodo-rpc-client" }
+csv = "1.1"
+serde = "1.0.101"
