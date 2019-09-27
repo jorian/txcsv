@@ -59,6 +59,7 @@ fn main() {
                 })
             },
             (true, false) => { // outgoing only
+                println!("scenario2: {}", &tx_str);
                 let raw_tx = client.get_raw_transaction_verbose(
                     TransactionId::from_hex(&tx_str).unwrap()).unwrap();
 
@@ -164,9 +165,9 @@ fn main() {
 #[serde(rename_all = "PascalCase")]
 struct TX {
     timestamp: u64,
-    description: MoneyFlow,
-    value: f64,
     txid: String,
+    value: f64,
+    description: MoneyFlow,
 }
 
 #[derive(Debug, Serialize)]
