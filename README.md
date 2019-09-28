@@ -29,7 +29,7 @@ cd ~/csv_export/target/debug/
 ./csv_export <base58 address> <pubkey>
 ```
 
-The application will run for a while and print the CSV.
+The application will run for a while and store the CSV in the same folder, called `komodo_tx.csv`.
 
 ### How this app works
 The application assumes the following:
