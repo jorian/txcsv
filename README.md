@@ -14,7 +14,22 @@ There are multiple scenarios:
         1. with interest
         2. without interest
     2. This was an interest claim
- 
+    
+### Build and run
+First, you need Rust. Copy and paste in a terminal window to install it: 
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Next, clone this repository, change directory into it and run `cargo build`. It will build the needed binary, which will be located in `~/csv_export/target/debug/csv_export`
+
+Then, go to this directory and run the binary with the following 2 parameters (this assumes a komodo daemon is running with addressindex enabled):
+```shell script
+cd ~/csv_export/target/debug/
+./csv_export <base58 address> <pubkey>
+```
+
+The application will run for a while and print the CSV.
 
 ### How this app works
 The application assumes the following:
