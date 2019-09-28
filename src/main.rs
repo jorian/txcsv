@@ -5,7 +5,6 @@ extern crate csv;
 use komodo_rpc_client::{KomodoRpcApi, TransactionId, RawTransaction};
 use komodo_rpc_client::Client;
 use komodo_rpc_client::arguments::AddressList;
-use std::io;
 use serde::Serialize;
 
 const FCOIN: f64 = 100_000_000.0;
@@ -53,7 +52,7 @@ fn main() {
 }
 
 fn write_to_csv(scenarios: Vec<TX>) {
-    let mut wrtr = csv::Writer::from_writer(io::stdout());
+    let mut wrtr = csv::Writer::from_path("./komodo_tx.csv").unwrap();
 
     for tx in scenarios {
         wrtr.serialize(tx).unwrap();
